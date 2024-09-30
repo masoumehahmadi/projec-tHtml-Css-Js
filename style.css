@@ -1,89 +1,86 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-body{
-  font-family: 'Poppins',sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
 }
-.container{
+.container {
   max-width: 1516px;
   margin: 0px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-height: 100vh;
+  height: 100vh;
 }
-.img-part{
+.img-part {
   width: 50%;
 }
-.img-part img{
+.img-part img {
   width: 90%;
-
 }
-.login-part{
+.login-part {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 30%;
   margin: 120px 80px 15px 80px;
-
 }
-.login-part h4{
-    font-size: 15px;
-    display: block;
+.login-part h4 {
+  font-size: 15px;
+  display: block;
 }
-.login-part input{
+.login-part input {
   width: 100%;
   height: 40px;
-  margin: 10px 0 20px 0;
+  margin-top: 10px;
   border-radius: 5px;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #d3d3d3;
 }
-input::placeholder{
-  color: #D3D3D3;
+.validation{
+  border: 1px solid crimson !important;
+}
+input::placeholder {
+  color: #d3d3d3;
   padding: 0 30px;
 }
-.title{
-  padding-bottom:  50px;
+.inp-validation-email,
+.inp-validation-pass{
+  font-size: 12px;
+  display: block;
+  margin: 2px 0;
+  color: crimson;
+}
+.title {
+  padding-bottom: 50px;
   font-size: 50px;
 }
-.input-icon{
+.input-icon {
   position: relative;
 }
-.icon-email{
-  bottom: 45% ;
+
+.icon-password {
+  bottom: 30%;
   left: 13px;
+  fill: #d3d3d3;
 }
-.icon-password{
-  bottom: 49% ;
-  left: 13px;
-  fill: #D3D3D3;
-}
-.input-icon svg{
+.input-icon svg {
   position: absolute;
 }
-.show-password{
-bottom: 45%;
-right: 7px;
+.icon-email {
+  bottom: 25%;
+  left: 13px;
 }
-.hide-password{
-  bottom: 45%;
+.show-password {
+  bottom: 30%;
+  right: 7px;
+}
+.hide-password {
+  bottom: 30%;
   right: 27px;
 }
-.email-address{
-
-}
-.email-input{
-
-}
-.password{
-
-}
-.password-input{
-
-}
-.signin-btn{
+.signin-btn {
   width: 100%;
   height: 40px;
   background: #232323;
@@ -91,49 +88,41 @@ right: 7px;
   border-radius: 5px;
   margin: 20px 0 6px 0;
 }
-.others{
-display: flex;
-justify-content: space-between;
-align-items: center;
+.others {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-font-size: 12px;
-margin-bottom: 25px;
+  font-size: 12px;
+  margin-bottom: 25px;
 }
-.others a{
+.others a {
   color: #232323;
 }
-.forget{
- 
-}
-.signup{
-
-}
-.line-or{
+.line-or {
   display: flex;
   flex-direction: row;
   margin: 10px 30px;
   text-align: center;
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .line-or::before,
-.line-or::after{
+.line-or::after {
   content: "";
-  flex: 1 1 ;
-  border-bottom: 2px solid #D3D3D3;
+  flex: 1 1;
+  border-bottom: 2px solid #d3d3d3;
   margin: auto 8px;
   width: 20%;
-
-
 }
-.wallet{
+.wallet {
   position: relative;
 }
-.wallet-svg{
+.wallet-svg {
   position: absolute;
   top: 55%;
   left: 33%;
 }
-.login-wallet-btn{
+.login-wallet-btn {
   width: 100%;
   height: 40px;
   background: #232323;
@@ -141,90 +130,231 @@ margin-bottom: 25px;
   border-radius: 5px;
   margin-top: 30px;
 }
-.footer{
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 10px;
-margin-top: 80px;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  margin-top: 80px;
 }
-.footer a{
+.footer a {
   color: #232323;
   text-decoration: none;
-
 }
-.terms{
-
+.circle {
+  width: 7px;
+  height: 7px;
+  background: #232323;
+  border-radius: 100%;
+  margin: 0 3px;
 }
-.circle{
-width: 7px;
-height: 7px;
-background: #232323;
-border-radius: 100%;
-margin: 0 3px;
-}
-.privacy{
-
-}
-
 
 @media (max-width: 1270px) {
-  .wallet-svg{
+  .wallet-svg {
     left: 30%;
   }
   .img-part img {
     width: 100%;
-}
+  }
   .login-part {
     margin: 80px 80px 15px 80px;
-}
-  .footer{
+  }
+  .footer {
     margin-top: 60px;
-    }
+  }
 }
 @media (max-width: 1050px) {
-  .wallet-svg{
+  .wallet-svg {
     left: 27%;
   }
-
+  .footer {
+    margin-top: 20px;
+  }
+  .signin-btn {
+    margin: 10px 0 6px 0;
+  }
+  .others {
+    margin-bottom: 15px;
+  }
 }
 @media (max-width: 930px) {
-  .login-part h1{
+  .login-part h4 {
+    font-size: 12px;
+  }
+  .login-part input {
+    height: 25px;
+    margin: 10px 0 20px 0;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+  }
+  input::placeholder {
+    color: #d3d3d3;
+    padding: 0 20px;
+  }
+  .icon-email {
+    left: 3px;
+  }
+  .icon-password {
+    left: 3px;
+  }
+  .signin-btn {
+    height: 25px;
+    margin: 10px 0 4px 0;
+  }
+  .others {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+  .login-wallet-btn {
+    height: 28px;
+    font-size: 12px;
+  }
+  .login-part h1 {
     font-size: 45px;
-    padding-bottom: 30px;
-  }    
-  .footer{
+    padding-bottom: 20px;
+  }
+  .footer {
     margin-top: 20px;
-    }
-    .login-wallet-btn{
-      margin-top: 10px;
-    }
-    .wallet-svg{
-      top: 38%;
-      left: 20%;
-    }
-    .others{
-      margin-bottom: 10px;
-      }
-      .signin-btn{
-        margin: 10px 0 4px 0;
-      }
+  }
+  .login-wallet-btn {
+    margin-top: 10px;
+  }
+  .wallet-svg {
+    width: 15px;
+    height: 15px;
+    top: 38%;
+    left: 20%;
+  }
+  .others {
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 700px) {
-  .img-part img{
+  .img-part img {
     display: none;
   }
-  .login-part{
+  .login-part {
     width: 300%;
     margin: 130px;
   }
-}
-@media (max-width: 510px) {
-  .img-part img{
-    display: none;
+  .wallet-svg {
+    top: 44%;
+    left:25%;
   }
-  .login-part{
+}
+@media (max-width: 530px) {
+  .login-part {
     width: 100vw;
-    margin: 130px;
+    margin: 120px;
+  }
+  .login-part h4 {
+    font-size: 18px;
+  }
+  .login-part input {
+    height: 45px;
+    margin: 10px 0 25px 0;
+  }
+  .icon-email {
+    bottom: 48%;
+    left: 2%;
+  }
+  .icon-password {
+    bottom: 51%;
+    left: 2%;
+  }
+  .show-password {
+    bottom: 47%;
+  }
+  .hide-password {
+    bottom: 47%;
+  }
+  .login-wallet-btn {
+    margin-top: 20px;
+    height: 45px;
+  }
+  .wallet-svg {
+    width: 16px;
+    height: 16px;
+    top: 44%;
+    left: 10%;
+  }
+  .others {
+    margin-bottom: 20px;
+  }
+  .signin-btn {
+    margin: 10px 0 4px 0;
+    height: 42px;
+  }
+  .footer {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 470px) {
+  .login-part {
+    width: 100vw;
+    margin: 120px;
+  }
+  .login-part h4 {
+    font-size: 12px;
+  }
+  .login-part input {
+    font-size: 11px;
+  }
+  .icon-email {
+    width: 13px;
+    height: 13px;
+    bottom: 51%;
+    left: 5%;
+  }
+  .icon-password {
+    width: 13px;
+    height: 13px;
+    bottom: 53%;
+    left: 6%;
+  }
+  .show-password {
+    width: 12px;
+    height: 12px;
+    bottom: 50%;
+    right: 2%;
+  }
+  .hide-password {
+    width: 12px;
+    height: 12px;
+    bottom: 50%;
+    right: 12%;
+  }
+  .signin-btn {
+    height: 42px;
+    font-size: 10px;
+  }
+  .login-wallet-btn {
+    margin-top: 20px;
+    height: 45px;
+    font-size: 10px;
+  }
+  .wallet-svg {
+    width: 12px;
+    height: 12px;
+    top: 48%;
+    left: 10%;
+  }
+  .others a {
+    font-size: 8px;
+  }
+  .footer a {
+    font-size: 8px;
+  }
+  .circle {
+    width: 5px;
+    height: 5px;
+
+    margin: 0 5px 0 10px;
+  }
+  .terms {
+    text-align: right;
+  }
+  .line-or {
+    font-size: 10px;
   }
 }
