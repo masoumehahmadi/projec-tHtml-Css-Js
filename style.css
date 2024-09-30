@@ -192,9 +192,11 @@ input::placeholder {
     padding: 0 20px;
   }
   .icon-email {
+    bottom: 45%;
     left: 3px;
   }
   .icon-password {
+    bottom: 48%;
     left: 3px;
   }
   .signin-btn {
@@ -228,6 +230,12 @@ input::placeholder {
   .others {
     margin-bottom: 10px;
   }
+  .hide-password{
+bottom: 45%;
+  }
+.show-password{
+  bottom: 45%;
+}
 }
 @media (max-width: 700px) {
   .img-part img {
