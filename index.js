@@ -6,12 +6,14 @@ const submitbtn = $.querySelector(".signin-btn");
 const inpuIcon = $.querySelector(".input-icon");
 const inpuIconPassword = $.querySelector(".input-icon-2");
 const inpuIconName = $.querySelector(".input-icon-person");
+const inputIconRepeatPass = $.querySelector(".input-icon-repeatPass");
 
 const hidePassword = $.querySelector(".hide-password");
 const showPassword = $.querySelector(".show-password");
 const iconEmail = $.querySelector(".icon-email");
 const iconPassword = $.querySelector(".icon-password");
 const nameInput = $.querySelector(".name-input");
+const repeatPassword =$.getElementById('repeat-pass')
 
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -43,7 +45,12 @@ function validInput() {
   const emptyDivEmail = $.querySelector(".inp-validation-email");
   const emptyDivPass = $.querySelector(".inp-validation-pass");
   const emptyDivname = $.querySelector(".inp-validation-name");
+  const emptyDivrepeat = $.querySelector(".inp-validation-repeat-pass");
 
+  if (emptyDivrepeat) {
+    emptyDivrepeat.remove();
+    emptyDivrepeat.classList.remove("validation");
+  }
 
   if (emptyDivEmail) {
     emptyDivEmail.remove();
@@ -85,4 +92,17 @@ function validInput() {
     passwordInput.className = "password-input validation";
     inpuIconPassword.appendChild(divValidationPassword);
   }
+  if (!repeatPassword.value) {
+    const divValidationPassword = $.createElement("div");
+    divValidationPassword.innerHTML = "The field cannot be empty";
+    divValidationPassword.classList.add("inp-validation-repeat-pass");
+    repeatPassword.className = "password-input validation";
+    inputIconRepeatPass.appendChild(divValidationPassword);
+  }
+
+  passwordInput.value === repeatPassword.value ?
+}
+
+function validationPassword(){
+  
 }

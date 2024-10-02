@@ -50,7 +50,8 @@ input::placeholder {
 }
 .inp-validation-email,
 .inp-validation-pass,
-.inp-validation-name{
+.inp-validation-name,
+.inp-validation-repeat-pass{
   font-size: 12px;
   display: block;
   margin: 2px 0;
