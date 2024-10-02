@@ -49,7 +49,8 @@ input::placeholder {
   padding: 0 30px;
 }
 .inp-validation-email,
-.inp-validation-pass{
+.inp-validation-pass,
+.inp-validation-name{
   font-size: 12px;
   display: block;
   margin: 2px 0;

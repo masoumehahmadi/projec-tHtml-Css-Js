@@ -5,10 +5,14 @@ const passwordInput = $.querySelector(".password-input");
 const submitbtn = $.querySelector(".signin-btn");
 const inpuIcon = $.querySelector(".input-icon");
 const inpuIconPassword = $.querySelector(".input-icon-2");
+const inpuIconName = $.querySelector(".input-icon-person");
+
 const hidePassword = $.querySelector(".hide-password");
 const showPassword = $.querySelector(".show-password");
 const iconEmail = $.querySelector(".icon-email");
 const iconPassword = $.querySelector(".icon-password");
+const nameInput = $.querySelector(".name-input");
+
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -38,6 +42,8 @@ function iconDisplay(icon, inpClass) {
 function validInput() {
   const emptyDivEmail = $.querySelector(".inp-validation-email");
   const emptyDivPass = $.querySelector(".inp-validation-pass");
+  const emptyDivname = $.querySelector(".inp-validation-name");
+
 
   if (emptyDivEmail) {
     emptyDivEmail.remove();
@@ -47,7 +53,17 @@ function validInput() {
     emptyDivPass.remove();
     passwordInput.classList.remove("validation");
   }
-
+  if (emptyDivname) {
+    emptyDivname.remove();
+    nameInput.classList.remove("validation");
+  }
+  if (!nameInput.value || !nameInput.value.trim()) {
+    const divValidationName = $.createElement("div");
+    divValidationName.innerHTML = "The field cannot be empty";
+    divValidationName.classList.add("inp-validation-name");
+    nameInput.className = "name-input validation";
+    inpuIconName.appendChild(divValidationName);
+  }
   if (!emailInput.value || !emailInput.value.trim()) {
     const divValidation = $.createElement("div");
     divValidation.innerHTML = "The field cannot be empty";
