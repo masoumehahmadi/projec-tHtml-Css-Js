@@ -30,13 +30,16 @@ body {
 .login-part h4 {
   font-size: 15px;
   display: block;
+  margin-top: 18px;
+  margin-bottom: 5px;
 }
 .login-part input {
   width: 100%;
-  height: 40px;
+  height: 42px;
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
+  
 }
 .validation{
   border: 1px solid crimson !important;
@@ -56,7 +59,8 @@ input::placeholder {
   padding-bottom: 50px;
   font-size: 50px;
 }
-.input-icon {
+.input-icon,
+.input-icon-person {
   position: relative;
 }
 
@@ -65,8 +69,13 @@ input::placeholder {
   left: 13px;
   fill: #d3d3d3;
 }
-.input-icon svg {
+.input-icon svg,
+.input-icon-person svg {
   position: absolute;
+}
+.icon-person{
+  bottom: 25%;
+  left: 13px;
 }
 .icon-email {
   bottom: 25%;
@@ -75,12 +84,15 @@ input::placeholder {
 .show-password {
   bottom: 30%;
   right: 7px;
+  cursor: pointer;
 }
 .hide-password {
   bottom: 30%;
   right: 27px;
+  cursor: pointer;
 }
 .signin-btn {
+  cursor: pointer;
   width: 100%;
   height: 40px;
   background: #232323;
@@ -98,6 +110,7 @@ input::placeholder {
 }
 .others a {
   color: #232323;
+  cursor: pointer;
 }
 .line-or {
   display: flex;
@@ -123,6 +136,7 @@ input::placeholder {
   left: 33%;
 }
 .login-wallet-btn {
+  cursor: pointer;
   width: 100%;
   height: 40px;
   background: #232323;
@@ -140,6 +154,7 @@ input::placeholder {
 .footer a {
   color: #232323;
   text-decoration: none;
+  cursor: pointer;
 }
 .circle {
   width: 7px;
@@ -148,7 +163,29 @@ input::placeholder {
   border-radius: 100%;
   margin: 0 3px;
 }
+.login-addres{
+  text-decoration: none;
+  color: #4FC3F7;
+  cursor: pointer;
+}
+.circle-login{
+  width: 4px;
+  height: 4px;
+  background-color: #4FC3F7;
+  border-radius: 100%;
+  margin-left: 2px;
+}
+.create{ 
+  cursor: pointer;
+}
+.already-part{
 
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
 @media (max-width: 1270px) {
   .wallet-svg {
     left: 30%;
@@ -161,6 +198,9 @@ input::placeholder {
   }
   .footer {
     margin-top: 60px;
+  }
+  .already-part{
+    font-size: 10px;
   }
 }
 @media (max-width: 1050px) {
@@ -235,6 +275,22 @@ bottom: 45%;
   }
 .show-password{
   bottom: 45%;
+}
+.icon-person{
+  bottom: 45%;
+  left: 5px;
+}
+.already-part{
+  margin-top: 15px;
+  font-size: 9px;
+}
+.footer {
+  margin-top: 20px;
+  font-size: 8px;
+}
+.circle {
+  width: 5px;
+  height: 5px;
 }
 }
 @media (max-width: 700px) {

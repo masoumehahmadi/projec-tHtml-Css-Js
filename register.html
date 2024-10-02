@@ -19,17 +19,17 @@
       </div>
       <div class="login-part">
         <h1 class="title">Sign up</h1>
-        <h4 class="email-address">Full name</h4>
-        <div class="input-icon">
+        <h4 class="full-name">Full name</h4>
+        <div class="input-icon-person">
           <svg
             width="18px"
             height="18px"
-            class="icon-email"
-            viewBox="0 0 24.00 24.00"
-            fill="none"
+            class="icon-person"
+            viewBox="0 0 64 64"
             xmlns="http://www.w3.org/2000/svg"
-            stroke="#fff"
-            stroke-width="0.792"
+            stroke-width="3"
+            stroke="#D3d3d3"
+            fill="none"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -38,11 +38,9 @@
               stroke-linejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
+              <circle cx="32" cy="18.14" r="11.14"></circle>
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
-                fill="#D3D3D3"
+                d="M54.55,56.85A22.55,22.55,0,0,0,32,34.3h0A22.55,22.55,0,0,0,9.45,56.85Z"
               ></path>
             </g>
           </svg>
@@ -212,14 +210,15 @@
             placeholder="Enter password"
           />
         </div>
-        <button type="submit" class="signin-btn">Sign in</button>
-        <span class="create">
-          Already have an IPMinter Account?
-        </span>
-        <a href="#">
-          <div class="circle"> </div>
-          Login
-        </a>
+        <button type="submit" class="signin-btn signin-btn-register">
+          Sign in
+        </button>
+        <div class="already-part">
+          <span class="create"> Already have an IPMinter Account? </span>
+          <div class="circle-login"></div>
+          <a href="#" class="login-addres"> Login </a>
+        </div>
+
         <footer class="footer">
           <a href="#" class="terms">Terms and conditions</a>
           <div class="circle"></div>
