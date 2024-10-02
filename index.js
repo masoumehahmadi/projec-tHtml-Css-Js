@@ -44,6 +44,10 @@ hidePass.addEventListener("click", function hidePswd() {
 });
 ////////////
 
+if($.querySelector('.title').textContent==='Sign up'){
+  $.querySelector('.box-blur').style.display='block';
+}
+// icon in input
 passwordInput.addEventListener("input", () => {
   iconDisplay(passwordInput.value, iconPassword);
 });
@@ -63,6 +67,7 @@ function iconDisplay(icon, inpClass) {
     inpClass.style.display = "block";
   }
 }
+/////////////////////
 function validInput() {
   const emptyDivEmail = $.querySelector(".inp-validation-email");
   const emptyDivPass = $.querySelector(".inp-validation-pass");
