@@ -35,13 +35,22 @@ showPassword.addEventListener("click", function showPswd() {
 hidePassword.addEventListener("click", function hidePswd() {
   passwordInput.type = "password";
 });
-showPass.addEventListener("click", function showPswd() {
-  repeatPassword.type = "text";
-});
+if(showPass||hidePass||repeatPassword||nameInput){
+  showPass.addEventListener("click", function showPswd() {
+    repeatPassword.type = "text";
+  });
+  
+  hidePass.addEventListener("click", function hidePswd() {
+    repeatPassword.type = "password";
+  });
+  repeatPassword.addEventListener("input", () => {
+    iconDisplay(repeatPassword.value, iconPass);
+  });
+  nameInput.addEventListener("input", () => {
+    iconDisplay(nameInput.value, iconPerson);
+  });
+}
 
-hidePass.addEventListener("click", function hidePswd() {
-  repeatPassword.type = "password";
-});
 ////////////
 
 if($.querySelector('.title').textContent==='Sign up'){
@@ -51,15 +60,11 @@ if($.querySelector('.title').textContent==='Sign up'){
 passwordInput.addEventListener("input", () => {
   iconDisplay(passwordInput.value, iconPassword);
 });
-repeatPassword.addEventListener("input", () => {
-  iconDisplay(repeatPassword.value, iconPass);
-});
+
 emailInput.addEventListener("input", () => {
   iconDisplay(emailInput.value, iconEmail);
 });
-nameInput.addEventListener("input", () => {
-  iconDisplay(nameInput.value, iconPerson);
-});
+
 function iconDisplay(icon, inpClass) {
   if (icon) {
     inpClass.style.display = "none";
@@ -91,13 +96,16 @@ function validInput() {
     emptyDivname.remove();
     nameInput.classList.remove("validation");
   }
-  if (!nameInput.value || !nameInput.value.trim()) {
-    const divValidationName = $.createElement("div");
-    divValidationName.innerHTML = "The field cannot be empty";
-    divValidationName.classList.add("inp-validation-name");
-    nameInput.className = "name-input validation";
-    inpuIconName.appendChild(divValidationName);
+  if(nameInput){//for handle error login page
+    if (!nameInput.value || !nameInput.value.trim()) {
+      const divValidationName = $.createElement("div");
+      divValidationName.innerHTML = "The field cannot be empty";
+      divValidationName.classList.add("inp-validation-name");
+      nameInput.className = "name-input validation";
+      inpuIconName.appendChild(divValidationName);
+    }
   }
+
   if (!emailInput.value || !emailInput.value.trim()) {
     const divValidation = $.createElement("div");
     divValidation.innerHTML = "The field cannot be empty";
@@ -118,17 +126,20 @@ function validInput() {
     passwordInput.className = "password-input validation";
     inpuIconPassword.appendChild(divValidationPassword);
   }
-  if (!repeatPassword.value) {
-    const divValidationPassword = $.createElement("div");
-    divValidationPassword.innerHTML = "The field cannot be empty";
-    divValidationPassword.classList.add("inp-validation-repeat-pass");
-    repeatPassword.className = "password-input validation";
-    inputIconRepeatPass.appendChild(divValidationPassword);
+  if(repeatPassword){
+    if (!repeatPassword.value) {
+      const divValidationPassword = $.createElement("div");
+      divValidationPassword.innerHTML = "The field cannot be empty";
+      divValidationPassword.classList.add("inp-validation-repeat-pass");
+      repeatPassword.className = "password-input validation";
+      inputIconRepeatPass.appendChild(divValidationPassword);
+    }
+  
+    if (passwordInput.value !== repeatPassword.value) {
+      validationPassword();
+    }
   }
 
-  if (passwordInput.value !== repeatPassword.value) {
-    validationPassword();
-  }
 }
 
 function validationPassword() {
