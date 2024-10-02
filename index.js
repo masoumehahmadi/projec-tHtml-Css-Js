@@ -12,8 +12,14 @@ const hidePassword = $.querySelector(".hide-password");
 const showPassword = $.querySelector(".show-password");
 const iconEmail = $.querySelector(".icon-email");
 const iconPassword = $.querySelector(".icon-password");
+const iconPerson = $.querySelector(".icon-person");
+
 const nameInput = $.querySelector(".name-input");
-const repeatPassword =$.getElementById('repeat-pass')
+const repeatPassword = $.getElementById("repeat-pass");
+const showPass = $.getElementById("show-password");
+const hidePass = $.getElementById("hide-password");
+const iconPass = $.getElementById("icon-password");
+
 
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -21,19 +27,35 @@ const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 submitbtn.addEventListener("click", function validationInput() {
   validInput();
 });
+//show -hide password
 showPassword.addEventListener("click", function showPswd() {
   passwordInput.type = "text";
 });
+
 hidePassword.addEventListener("click", function hidePswd() {
   passwordInput.type = "password";
 });
+showPass.addEventListener("click", function showPswd() {
+  repeatPassword.type = "text";
+});
+
+hidePass.addEventListener("click", function hidePswd() {
+  repeatPassword.type = "password";
+});
+////////////
+
 passwordInput.addEventListener("input", () => {
   iconDisplay(passwordInput.value, iconPassword);
+});
+repeatPassword.addEventListener("input", () => {
+  iconDisplay(repeatPassword.value, iconPass);
 });
 emailInput.addEventListener("input", () => {
   iconDisplay(emailInput.value, iconEmail);
 });
-
+nameInput.addEventListener("input", () => {
+  iconDisplay(nameInput.value, iconPerson);
+});
 function iconDisplay(icon, inpClass) {
   if (icon) {
     inpClass.style.display = "none";
@@ -78,7 +100,6 @@ function validInput() {
     emailInput.className = "email-input validation";
     inpuIcon.appendChild(divValidation);
   } else if (!emailRegex.test(emailInput.value)) {
-    console.log(emailRegex.test(emailInput.value));
     const divValidation = $.createElement("div");
     divValidation.innerHTML = "The email is not valid";
     divValidation.classList.add("inp-validation-email");
@@ -100,9 +121,15 @@ function validInput() {
     inputIconRepeatPass.appendChild(divValidationPassword);
   }
 
-  passwordInput.value === repeatPassword.value ?
+  if (passwordInput.value !== repeatPassword.value) {
+    validationPassword();
+  }
 }
 
-function validationPassword(){
-  
+function validationPassword() {
+  const divValidationPassword = $.createElement("div");
+  divValidationPassword.innerHTML = "Passwords do not match";
+  divValidationPassword.classList.add("inp-validation-repeat-pass");
+  repeatPassword.className = "password-input validation";
+  inputIconRepeatPass.appendChild(divValidationPassword);
 }
